@@ -1,5 +1,6 @@
-STIGMA ![status]
-----------------
+STIGMA 
+-------
+![status]
 
 Easy Python program to parse OpenSCAP result files and give results. Like the following:
 
