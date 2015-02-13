@@ -1,5 +1,5 @@
-STIGMA
--------
+STIGMA ![status]
+----------------
 
 Easy Python program to parse OpenSCAP result files and give results. Like the following:
 
@@ -43,4 +43,5 @@ Easy Python program to parse OpenSCAP result files and give results. Like the fo
 
 
 [0]:http://iase.disa.mil/stigs/scap/Pages/index.aspx
-[sampleout]:https://raw.githubusercontent.com/nousdefions/STIGMA/master/sample_out.png "Sample Results"    
+[sampleout]:https://raw.githubusercontent.com/nousdefions/STIGMA/master/sample_out.png "Sample Results" 
+[status]:https://codeship.com/projects/68c0e940-95e5-0132-ce8c-1ea94e73e3c0/status?branch=master)
