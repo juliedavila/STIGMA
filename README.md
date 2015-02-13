@@ -7,21 +7,22 @@ Easy Python program to parse OpenSCAP result files and give results. Like the fo
 
 ## Instructions
 
-1. Install OpenSCAP
+- Install OpenSCAP
     
     yum install openscap-utils
 
-2. Download SCAP DISA STIG zip file from [here][0]
+- Download SCAP DISA STIG zip file from [here][0]
 
-3. Unzip DISA STIG content
+- Unzip DISA STIG content
 
-4. Evaluate your favorite profile, for example MAC-1_Public, and write XCCDF results into a results.xml file.
+- Evaluate your favorite profile, for example MAC-1_Public, and write XCCDF results into a results.xml file.
 
 ```shell
     # Example
     oscap xccdf eval --profile MAC-1_Public --results results.xml --cpe U_RedHat_5_V1R2_STIG_Benchmark-cpe-dictionary.xml U_RedHat_5_V1R2_STIG_Benchmark-xccdf.xml
 ```
-5. Run STIGMA
+
+- Run STIGMA
 
 ```shell
     python stigma.py -P /path/to/results.xml 
