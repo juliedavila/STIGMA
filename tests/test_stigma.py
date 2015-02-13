@@ -1,4 +1,4 @@
-from stigma import StigReport
+from src.stigma import StigReport
 import pytest
 
 s = StigReport()
