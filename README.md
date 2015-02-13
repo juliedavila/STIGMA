@@ -39,4 +39,4 @@ Easy Python program to parse OpenSCAP result files and give results. Like the fo
 
 
 [0]:http://iase.disa.mil/stigs/scap/Pages/index.aspx
-[sampleout]:https://github.com/nousdefions/STIGMA/sample_out.png "Sample Results"    
+[sampleout]:https://raw.githubusercontent.com/nousdefions/STIGMA/master/sample_out.png "Sample Results"    
