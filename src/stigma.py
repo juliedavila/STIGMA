@@ -59,7 +59,7 @@ class StigReport:
     try:
       result_meta
     except NameError:
-      result_meta = untangle.parse('./results.xml')
+      result_meta = untangle.parse('tests/results.xml')
     else:
       sys.exit("There is an issue with result_meta and/args")
 
