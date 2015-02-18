@@ -36,7 +36,7 @@ if __name__ == "__main__":
   parser.add_argument('-L', '--low-pass', required=False, dest='low_pass', type=int, default=90,
                          help='Default 90%%. The pass percentage to determines success for'
                               ' low severity benchmarks')
-  parser.add_argument('--show-failures', required=False, dest='show', type=str, 
+  parser.add_argument('--show-failures', required=False, dest='show', type=str, default='all'
                       choices=['all', 'high', 'medium', 'low'],
                       help='Returns failures by rule ID.')
   args = parser.parse_args()
