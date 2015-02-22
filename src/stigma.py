@@ -36,7 +36,7 @@ if __name__ == "__main__":
   parser.add_argument('-L', '--low-pass', required=False, dest='low_pass', type=int, default=90,
                          help='Default 90%%. The pass percentage to determines success for'
                               ' low severity benchmarks')
-  parser.add_argument('--show-failures', required=False, dest='show', type=str, default='all',
+  parser.add_argument('--show-failures', required=False, dest='show', type=str,
                       choices=['all', 'high', 'medium', 'low'],
                       help='Returns failures by rule ID.')
   args = parser.parse_args()
@@ -55,7 +55,7 @@ class StigReport:
     except NameError:
       class args:
         high_pass   =   90,
-        medium_pass =     90,
+        medium_pass =   90,
         low_pass    =   90,
         total_pass  =   10
 
@@ -197,7 +197,7 @@ class StigReport:
 if __name__ == "__main__":
 
   print tabulate(StigReport.table, headers=StigReport.headers, numalign='center', stralign='center', tablefmt="grid")
-
+  
   if args.show:
     if args.show == 'all':
       print 'Low Failures are: %s \n' % ', '.join(StigReport.low_fails)
