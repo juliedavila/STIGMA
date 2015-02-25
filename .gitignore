@@ -1,3 +1,4 @@
 *.pyc
 *cache*
+.coveralls.yml
 .coverage

@@ -3,4 +3,3 @@ untangle
 pytest
 python-coveralls
 pytest-cov
-coveralls==1.0a2
