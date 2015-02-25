@@ -1,4 +1,5 @@
 tabulate
 untangle
 pytest
-coveralls
+python-coveralls
+pytest-cov
