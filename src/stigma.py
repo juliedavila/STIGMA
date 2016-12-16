@@ -39,13 +39,20 @@ if __name__ == "__main__":
   parser.add_argument('--show-failures', required=False, dest='show', type=str,
                       choices=['all', 'high', 'medium', 'low'],
                       help='Returns failures by rule ID.')
+  parser.add_argument('--no-color', required=False, dest='colorize_output', type=bool, default=True, nargs='*',
+                      help='Do not display output in color')
   args = parser.parse_args()
   result_meta = untangle.parse(args.results_xml)
-  
+
 class bcolors:
+  if args.colorize_output:
     OKGREEN = '\033[92m'
     FAIL = '\033[91m'
     ENDC = '\033[0m'
+  else:
+    OKGREEN = ''
+    FAIL = ''
+    ENDC = ''
 
 class StigReport:
 
@@ -66,7 +73,7 @@ class StigReport:
     else:
       sys.exit("There is an issue with result_meta and/args")
 
-  
+
   def percentage(self, part, whole):
       return 100 * int(part)/int(whole)
 
@@ -157,7 +164,7 @@ class StigReport:
   low_total     = str(metrics['low_total'])
   low_pass    = bcolors.OKGREEN + str(metrics['low_pass']) + bcolors.ENDC
 
-  total       = str(len(rule_list)) 
+  total       = str(len(rule_list))
   total_success   = percentage(None, metrics['total_pass'], total)
   total_fail    = bcolors.FAIL + str(metrics['total_fail']) + bcolors.ENDC
   total_pass    = bcolors.OKGREEN + str(metrics['total_pass']) + bcolors.ENDC
@@ -182,7 +189,7 @@ class StigReport:
     if args.total_pass > total_success:
       severity_success['Overall'] = bcolors.FAIL + 'FAILED' + bcolors.ENDC
       failure = True
-  else: 
+  else:
     severity_success['Overall'] = 'N/A'
 
 
@@ -197,7 +204,7 @@ class StigReport:
 if __name__ == "__main__":
 
   print tabulate(StigReport.table, headers=StigReport.headers, numalign='center', stralign='center', tablefmt="grid")
-  
+
   if args.show:
     if args.show == 'all':
       print 'Low Failures are: %s \n' % ', '.join(StigReport.low_fails)
